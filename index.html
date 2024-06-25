@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle Financeiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Controle Financeiro</h1>
+
+        <div class="transaction-form">
+            <h2>Adicionar Transação</h2>
+            <form id="transaction-form">
+                <label for="date">Data:</label>
+                <input type="date" id="date" required><br>
+                <label for="category">Categoria:</label>
+                <input type="text" id="category" required><br>
+                <label for="amount">Valor:</label>
+                <input type="number" id="amount" required><br>
+                <label for="type">Tipo:</label>
+                <select id="type" required>
+                    <option value="income">Renda</option>
+                    <option value="expense">Despesa</option>
+                </select><br>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <div class="transaction-summary">
+            <h2>Resumo Financeiro</h2>
+            <div id="summary">
+                <p>Total de Rendas: <span id="total-income">0</span></p>
+                <p>Total de Despesas: <span id="total-expense">0</span></p>
+                <p>Saldo: <span id="balance">0</span></p>
+            </div>
+        </div>
+
+        <div class="transaction-filter">
+            <h2>Filtrar Transações</h2>
+            <form id="filter-form">
+                <label for="filter-date">Data:</label>
+                <input type="date" id="filter-date"><br>
+                <label for="filter-category">Categoria:</label>
+                <input type="text" id="filter-category"><br>
+                <button type="button" onclick="filterTransactions()">Filtrar</button>
+            </form>
+        </div>
+
+        <div class="transaction-list">
+            <h2>Transações</h2>
+            <table id="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Categoria</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-tbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
